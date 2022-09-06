@@ -26,7 +26,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-1. git clone git@github.com:worashf/Math-Magician.git. 2. cd Math-Magician
+1. git clone https://github.com/Kumilachew-g/Math-Magicians.git 
+2. cd Math-Magicians
 
 ### Install
 
