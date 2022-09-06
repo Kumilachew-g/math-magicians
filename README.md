@@ -13,7 +13,7 @@ In the project directory, you can run:
 
 ## Live Demo
 
-[live video](Coming Soon!)
+[Coming Soon!](https://kumilachew-g.github.io/Math-Magicians/)
 
 ## Getting Started
 
