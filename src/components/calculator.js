@@ -10,7 +10,6 @@ class Calculator extends React.Component {
   render() {
     return (
       <section className="calculator-section">
-        {/* <h1>Math Magician</h1> */}
         <div className="output-section">0</div>
         <div className="digits">
           <button type="button" className="buttons">
