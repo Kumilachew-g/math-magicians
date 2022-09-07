@@ -1,0 +1,42 @@
+.calculator-section {
+  width: 505px;
+  margin: 40px 36% 0;
+}
+
+.output-section {
+  background-color: #858694;
+  text-align: right;
+  font-size: 32px;
+  padding: 11px;
+  color: #fff;
+}
+
+.digits {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.buttons {
+  background-color: #e0e0e0;
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid #dadada;
+  font-weight: bold;
+}
+
+.buttons:hover {
+  background-color: #efebeb;
+}
+
+.operator-signs {
+  background-color: #f5913e;
+}
+
+.operator-signs:hover {
+  background-color: #f5913e;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+}
