@@ -1,26 +1,26 @@
 import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {
-  const numOne = Big(numberOne);
-  const numTwo = Big(numberTwo);
+  const one = Big(numberOne);
+  const two = Big(numberTwo);
   if (operation === '+') {
-    return numOne.plus(numTwo).toString();
+    return one.plus(two).toString();
   }
   if (operation === '-') {
-    return numOne.minus(numTwo).toString();
+    return one.minus(two).toString();
   }
   if (operation === 'x') {
-    return numOne.times(numTwo).toString();
+    return one.times(two).toString();
   }
   if (operation === '÷') {
     try {
-      return numOne.div(numTwo).toString();
+      return one.div(two).toString();
     } catch (err) {
-      return "Can't Divide By 0.";
+      return "Can't divide by 0.";
     }
   }
   if (operation === '%') {
-    return numOne.mod(numTwo).toString();
+    return one.mod(two).toString();
   }
-  throw Error(`Unknown Operation '${operation}'`);
+  throw Error(`Unknown operation '${operation}'`);
 }

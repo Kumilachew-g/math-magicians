@@ -4,116 +4,126 @@ function isNumber(item) {
   return !!item.match(/[0-9]+/);
 }
 
-export default function calculate(dataObj, buttonName) {
+/**
+ * Given a button name and a calculator data object, return an updated
+ * calculator data object.
+ *
+ * Calculator data object contains:
+ *   total:s      the running total
+ *   next:String       the next number to be operated on with the total
+ *   operation:String  +, -, etc.
+ */
+export default function calculate(obj, buttonName) {
   if (buttonName === 'AC') {
     return {
-      totalOutput: null,
-      nextOutput: null,
+      total: null,
+      next: null,
       operation: null,
     };
   }
 
   if (isNumber(buttonName)) {
-    if (buttonName === '0' && dataObj.nextOutput === '0') {
+    if (buttonName === '0' && obj.next === '0') {
       return {};
     }
-    // If there is an operation, update nextOutput
-    if (dataObj.operation) {
-      if (dataObj.nextOutput) {
-        return { ...dataObj, nextOutput: dataObj.nextOutput + buttonName };
+    // If there is an operation, update next
+    if (obj.operation) {
+      if (obj.next) {
+        return { ...obj, next: obj.next + buttonName };
       }
-      return { ...dataObj, nextOutput: buttonName };
+      return { ...obj, next: buttonName };
     }
-    // If there is no operation, update nextOutput and clear the value
-    if (dataObj.nextOutput) {
+    // If there is no operation, update next and clear the value
+    if (obj.next) {
       return {
-        nextOutput: dataObj.nextOutput + buttonName,
-        totalOutput: null,
+        next: obj.next + buttonName,
+        total: null,
       };
     }
     return {
-      nextOutput: buttonName,
-      totalOutput: null,
+      next: buttonName,
+      total: null,
     };
   }
 
   if (buttonName === '.') {
-    if (dataObj.nextOutput) {
-      if (dataObj.nextOutput.includes('.')) {
-        return { ...dataObj };
+    if (obj.next) {
+      if (obj.next.includes('.')) {
+        return { ...obj };
       }
-      return { ...dataObj, nextOutput: `${dataObj.nextOutput}.` };
+      return { ...obj, next: `${obj.next}.` };
     }
-    if (dataObj.operation) {
-      return { nextOutput: '0.' };
+    if (obj.operation) {
+      return { next: '0.' };
     }
-    if (dataObj.totalOutput) {
-      if (dataObj.totalOutput.includes('.')) {
+    if (obj.total) {
+      if (obj.total.includes('.')) {
         return {};
       }
-      return { totalOutput: `${dataObj.totalOutput}.` };
+      return { total: `${obj.total}.` };
     }
-    return { totalOutput: '0.' };
+    return { total: '0.' };
   }
 
   if (buttonName === '=') {
-    if (dataObj.nextOutput && dataObj.operation) {
+    if (obj.next && obj.operation) {
       return {
-        totalOutput: operate(
-          dataObj.totalOutput,
-          dataObj.nextOutput,
-          dataObj.operation,
-        ),
-        nextOutput: null,
+        total: operate(obj.total, obj.next, obj.operation),
+        next: null,
         operation: null,
       };
     }
-
+    // '=' with no operation, nothing to do
     return {};
   }
 
   if (buttonName === '+/-') {
-    if (dataObj.nextOutput) {
-      return {
-        ...dataObj,
-        nextOutput: (-1 * parseFloat(dataObj.nextOutput)).toString(),
-      };
+    if (obj.next) {
+      return { ...obj, next: (-1 * parseFloat(obj.next)).toString() };
     }
-    if (dataObj.totalOutput) {
-      return {
-        ...dataObj,
-        totalOutput: (-1 * parseFloat(dataObj.totalOutput)).toString(),
-      };
+    if (obj.total) {
+      return { ...obj, total: (-1 * parseFloat(obj.total)).toString() };
     }
     return {};
   }
 
-  if (!dataObj.nextOutput && dataObj.totalOutput && !dataObj.operation) {
-    return { ...dataObj, operation: buttonName };
+  // Button must be an operation
+
+  // When the user presses an operation button without having entered
+  // a number first, do nothing.
+  // if (!obj.next && !obj.total) {
+  //   return {};
+  // }
+
+  // User pressed an operation after pressing '='
+  if (!obj.next && obj.total && !obj.operation) {
+    return { ...obj, operation: buttonName };
   }
 
-  if (dataObj.operation) {
-    if (dataObj.totalOutput && !dataObj.nextOutput) {
-      return { ...dataObj, operation: buttonName };
+  // User pressed an operation button and there is an existing operation
+  if (obj.operation) {
+    if (obj.total && !obj.next) {
+      return { ...obj, operation: buttonName };
     }
 
     return {
-      totalOutput: operate(
-        dataObj.totalOutput,
-        dataObj.nextOutput,
-        dataObj.operation,
-      ),
-      nextOutput: null,
+      total: operate(obj.total, obj.next, obj.operation),
+      next: null,
       operation: buttonName,
     };
   }
 
-  if (!dataObj.nextOutput) {
+  // no operation yet, but the user typed one
+
+  // The user hasn't typed a number yet, just save the operation
+  if (!obj.next) {
     return { operation: buttonName };
   }
+
+  // save the operation and shift 'next' into 'total'
   return {
-    totalOutput: dataObj.nextOutput,
-    nextOutput: null,
+    total: obj.next,
+    next: null,
     operation: buttonName,
   };
 }
