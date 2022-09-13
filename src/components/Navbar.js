@@ -20,11 +20,11 @@ const Links = [
 ];
 
 const Navbar = () => (
-  <nav className='nav'>
+  <nav className='navbar'>
     <h1>Math Magician</h1>
     <ul>
       {Links.map((link) => (
-        <NavLink to={link.path} key={link.id} className='links'>
+        <NavLink to={link.path} key={link.id} className='navbar-links'>
           {link.name}
         </NavLink>
       ))}

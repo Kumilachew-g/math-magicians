@@ -3,7 +3,7 @@ import Particles from 'react-particles-js';
 
 const ParticlesComponent = () => (
   <Particles
-    id='particles-js'
+    id='react-particles-js'
     params={{
       particles: {
         number: {

@@ -3,7 +3,7 @@ import ParticlesComponent from 'react-particles-js';
 
 const Home = () => (
   <div>
-    <div className='welcome'>
+    <div className='welcome-home'>
       <h1>Welcome to Our Page!</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni maiores
