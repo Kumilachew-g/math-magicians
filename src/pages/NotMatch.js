@@ -1,9 +1,10 @@
 import React from 'react';
+import image from '../images/notFound.jpg';
 
 const NotMatch = () => (
-  <div>
-    <h1>404</h1>
-    <p>Page Not Found</p>
+  <div className="no-match">
+    <h3>Whoops! Page not found!</h3>
+    <img src={image} alt="Not found" />
   </div>
 );
 

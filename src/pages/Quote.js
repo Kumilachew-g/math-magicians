@@ -3,25 +3,13 @@ import ParticlesComponent from 'react-particles-js';
 
 const Quote = () => (
   <div>
-    <div className='quotes'>
+    <div className="quotes">
       <h3>
-        As far as the laws of mathematics refer to reality, they are not
-        certain, and as far as they are certain, they do not refer to reality.
+        Without mathematics, there’s nothing you can do. Everything around you
+        is mathematics. Everything around you is numbers.
         <br />
-        It is about understanding. -Albert Einstein.
+        It is about understanding. — Shakuntala Devi.
       </h3>
-      <h3>
-        In mathematics the art of proposing a question must be held of higher
-        value than solving it.
-      </h3>
-      <br />
-      It is about understanding. — Georg Cantor
-      <h3>
-        In mathematics the art of proposing a question must be held of higher
-        value than solving it.
-      </h3>
-      <br />
-      It is about understanding. — Georg Cantor
     </div>
     <ParticlesComponent />
   </div>
