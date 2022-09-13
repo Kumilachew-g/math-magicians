@@ -1,34 +1,31 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Calculator from './components/calculator';
+/* eslint-disable*/
+import Calculator from './components/Calculator';
+import Home from './pages/Home';
+import Quote from './pages/Quote';
+import NotMatch from './pages/NotMatch';
+import Navbar from './components/Navbar';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      digitObj: {
-        totalOutput: 0,
-        nextOutput: 0,
-        operation: null,
-      },
-    };
-    this.updateState = this.updateState.bind(this);
-  }
-
-  updateState(obj) {
-    this.setState({
-      digitObj: obj,
-    });
-  }
-
-  render() {
-    const { digitObj } = this.state;
-    return (
-      <div className="App">
-        <Calculator updateState={this.updateState} digitObj={digitObj} />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <Navbar />
+    <Switch>
+      <Route exact path='/Math-Magician'>
+        <Home />
+      </Route>
+      <Route path='/Math-Magician/calculator'>
+        <Calculator />
+      </Route>
+      <Route path='/Math-Magician/quote'>
+        <Quote />
+      </Route>
+      <Route path='*'>
+        <NotMatch />
+      </Route>
+    </Switch>
+  </Router>
+);
 
 export default App;

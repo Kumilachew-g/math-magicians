@@ -1,14 +1,25 @@
+.calculator-container {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  margin-top: 32px;
+}
+
+.calculator-container h1 {
+  margin-left: 12px;
+  font-size: 32px;
+}
+
 .calculator-section {
-  width: 505px;
-  margin: 40px 36% 0;
+  margin: auto;
+  width: 502px;
 }
 
 .output-section {
-  background-color: #858694;
+  background-color: #3c6f7a;
+  border: 1px solid #dadada;
   text-align: right;
   font-size: 32px;
   padding: 11px;
-  color: #fff;
 }
 
 .digits {
@@ -29,11 +40,12 @@
 }
 
 .operator-signs {
-  background-color: #f5913e;
+  background-color: #3c6f7a;
+  color: #fff;
 }
 
 .operator-signs:hover {
-  background-color: #f5913e;
+  background-color: #3c6f7a;
 }
 
 .bottom {
