@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Calculator from './components/calculator';
+import './App.css';
+import Calculator from './components/Calculator';
 import Home from './pages/Home';
 import Quote from './pages/Quote';
 import NotMatch from './pages/NotMatch';
@@ -11,16 +11,16 @@ const App = () => (
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path='/'>
+      <Route exact path="/Math-Magician">
         <Home />
       </Route>
-      <Route path='/calculator'>
+      <Route path="/Math-Magician/calculator">
         <Calculator />
       </Route>
-      <Route path='/quote'>
+      <Route path="/Math-Magician/quote">
         <Quote />
       </Route>
-      <Route path='*'>
+      <Route path="*">
         <NotMatch />
       </Route>
     </Switch>
