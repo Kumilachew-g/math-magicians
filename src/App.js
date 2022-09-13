@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+/* eslint-disable*/
 import Calculator from './components/Calculator';
 import Home from './pages/Home';
 import Quote from './pages/Quote';
@@ -11,16 +12,16 @@ const App = () => (
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/Math-Magician">
+      <Route exact path='/Math-Magician'>
         <Home />
       </Route>
-      <Route path="/Math-Magician/calculator">
+      <Route path='/Math-Magician/calculator'>
         <Calculator />
       </Route>
-      <Route path="/Math-Magician/quote">
+      <Route path='/Math-Magician/quote'>
         <Quote />
       </Route>
-      <Route path="*">
+      <Route path='*'>
         <NotMatch />
       </Route>
     </Switch>
