@@ -5,26 +5,26 @@ const Links = [
   {
     id: 1,
     name: 'Home',
-    path: '/',
+    path: '/Math-Magician',
   },
   {
     id: 2,
     name: 'Calculator',
-    path: '/calculator',
+    path: '/Math-Magician/calculator',
   },
   {
     id: 3,
     name: 'Qoute',
-    path: '/quote',
+    path: '/Math-Magician/quote',
   },
 ];
 
 const Navbar = () => (
-  <nav className='navbar'>
+  <nav className="nav-bar">
     <h1>Math Magician</h1>
     <ul>
       {Links.map((link) => (
-        <NavLink to={link.path} key={link.id} className='navbar-links'>
+        <NavLink to={link.path} key={link.id} className="navbar-links">
           {link.name}
         </NavLink>
       ))}

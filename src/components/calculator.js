@@ -1,42 +1,42 @@
 import React, { useState } from 'react';
 import calculate from '../logic/calculate';
-import './calculator.css';
+import './Calculator.css';
 
 const Calculator = () => {
   const [digitObj, setDigitObj] = useState({
-    totalOutput: 0,
-    nextOutput: 0,
+    total: 0,
+    next: 0,
     operation: null,
   });
 
-  const updateState = (dataobj) => {
-    setDigitObj(dataobj);
+  const updateState = (obj) => {
+    setDigitObj(obj);
   };
 
-  const calculator = (dataobj, button) => {
-    const newObj = calculate(dataobj, button);
+  const calculator = (obj, button) => {
+    const newObj = calculate(obj, button);
     updateState(newObj);
   };
 
   const outputSection = () => {
-    const { totalOutput, nextOutput, operation } = digitObj;
+    const { total, next, operation } = digitObj;
 
-    if (totalOutput === null && nextOutput === null) {
+    if (total === null && next === null) {
       return 0;
     }
-    if (nextOutput !== null && totalOutput === null) {
-      return nextOutput;
+    if (next !== null && total === null) {
+      return next;
     }
-    if (totalOutput !== null && nextOutput !== null) {
+    if (total !== null && next !== null) {
       if (operation !== null && operation !== undefined) {
-        return `${totalOutput} ${operation} ${nextOutput}`;
+        return `${total} ${operation} ${next}`;
       }
-      return totalOutput;
+      return total;
     }
-    return totalOutput;
+    return total;
   };
 
-  const btns = [
+  const buttons = [
     'AC',
     '+/-',
     '%',
@@ -53,82 +53,67 @@ const Calculator = () => {
     '2',
     '3',
     '+',
-  ].map((btn) =>
-    btn === 'x' || btn === '+' || btn === '-' || btn === '÷' ? (
-      <button
-        type='button'
-        className='buttons operator-signs'
-        value={btn}
-        key={btn}
-        onClick={() => calculator(digitObj, btn)}
-      >
-        {btn}
-      </button>
-    ) : (
-      <button
-        type='button'
-        className='buttons'
-        value={btn}
-        key={btn}
-        onClick={() => calculator(digitObj, btn)}
-      >
-        {btn}
-      </button>
-    )
-  );
+  ].map((btn) => (btn === 'x' || btn === '+' || btn === '-' || btn === '÷' ? (
+    <button
+      type="button"
+      className="buttons operator-signs"
+      value={btn}
+      key={btn}
+      onClick={() => calculator(digitObj, btn)}
+    >
+      {btn}
+    </button>
+  ) : (
+    <button
+      type="button"
+      className="buttons"
+      value={btn}
+      key={btn}
+      onClick={() => calculator(digitObj, btn)}
+    >
+      {btn}
+    </button>
+  )));
 
   return (
-    <section className='calculator-container'>
-      <div className='output-section'>{outputSection()}</div>
-      <div className='digits'>
-        {btns}
-
-        {/* Edit The Title */}
-        <h1>Let&apos;s do some math!</h1>
+    <section className="calculator-container">
+      <h1>Let&apos;s do some math!</h1>
       <div className="calculator-section">
-        <div className="output-section">{returnSection()}</div>
-        <div className="digits">
-          {buttons}
-        </div>
-        <span className="end">
-          <button type="button" className="buttons" value="0" onClick={() => { calculator(digitObj, '0'); }}>0</button>
-          <button type="button" className="buttons" value="." onClick={() => { calculator(digitObj, '.'); }}>.</button>
-          <button type="button" className="buttons operator-signs" value="=" onClick={() => { calculator(digitObj, '='); }}>=</button>
+        <div className="output-section">{outputSection()}</div>
+        <div className="digits">{buttons}</div>
+        <span className="bottom">
+          <button
+            type="button"
+            className="buttons"
+            value="0"
+            onClick={() => {
+              calculator(digitObj, '0');
+            }}
+          >
+            0
+          </button>
+          <button
+            type="button"
+            className="buttons"
+            value="."
+            onClick={() => {
+              calculator(digitObj, '.');
+            }}
+          >
+            .
+          </button>
+          <button
+            type="button"
+            className="buttons operator-signs"
+            value="="
+            onClick={() => {
+              calculator(digitObj, '=');
+            }}
+          >
+            =
+          </button>
         </span>
-        {/* End Edit Title */}
       </div>
-      <span className='bottom'>
-        <button
-          type='button'
-          className='buttons'
-          value='0'
-          onClick={() => {
-            calculator(digitObj, '0');
-          }}
-        >
-          0
-        </button>
-        <button
-          type='button'
-          className='buttons'
-          value='.'
-          onClick={() => {
-            calculator(digitObj, '.');
-          }}
-        >
-          .
-        </button>
-        <button
-          type='button'
-          className='buttons operator-signs'
-          value='='
-          onClick={() => {
-            calculator(digitObj, '=');
-          }}
-        >
-          =
-        </button>
-      </span>
     </section>
   );
 };

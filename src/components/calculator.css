@@ -8,19 +8,18 @@
   margin-left: 12px;
   font-size: 32px;
 }
+
 .calculator-section {
-  width: 505px;
   margin: auto;
+  width: 502px;
 }
 
 .output-section {
-  background-color: #869cff;
+  background-color: #3c6f7a;
   border: 1px solid #dadada;
-  /* background-color: #858694; */
   text-align: right;
   font-size: 32px;
   padding: 11px;
-  /* color: #fff; */
 }
 
 .digits {
@@ -41,14 +40,12 @@
 }
 
 .operator-signs {
-  /* background-color: #f5913e; */
-  background-color: #6b6bf7;
+  background-color: #3c6f7a;
   color: #fff;
 }
 
 .operator-signs:hover {
-  /* background-color: #f5913e; */
-  background-color: #5e5ef4;
+  background-color: #3c6f7a;
 }
 
 .bottom {
