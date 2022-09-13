@@ -16,6 +16,12 @@ const Quote = () => (
       </h3>
       <br />
       It is about understanding. — Georg Cantor
+      <h3>
+        In mathematics the art of proposing a question must be held of higher
+        value than solving it.
+      </h3>
+      <br />
+      It is about understanding. — Georg Cantor
     </div>
     <ParticlesComponent />
   </div>
