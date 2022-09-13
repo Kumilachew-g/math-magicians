@@ -53,37 +53,55 @@ const Calculator = () => {
     '2',
     '3',
     '+',
-  ].map((btn) => (btn === 'x' || btn === '+' || btn === '-' || btn === '÷' ? (
-    <button
-      type="button"
-      className="buttons operator-signs"
-      value={btn}
-      key={btn}
-      onClick={() => calculator(digitObj, btn)}
-    >
-      {btn}
-    </button>
-  ) : (
-    <button
-      type="button"
-      className="buttons"
-      value={btn}
-      key={btn}
-      onClick={() => calculator(digitObj, btn)}
-    >
-      {btn}
-    </button>
-  )));
+  ].map((btn) =>
+    btn === 'x' || btn === '+' || btn === '-' || btn === '÷' ? (
+      <button
+        type='button'
+        className='buttons operator-signs'
+        value={btn}
+        key={btn}
+        onClick={() => calculator(digitObj, btn)}
+      >
+        {btn}
+      </button>
+    ) : (
+      <button
+        type='button'
+        className='buttons'
+        value={btn}
+        key={btn}
+        onClick={() => calculator(digitObj, btn)}
+      >
+        {btn}
+      </button>
+    )
+  );
 
   return (
-    <section className="calculator-section">
-      <div className="output-section">{outputSection()}</div>
-      <div className="digits">{btns}</div>
-      <span className="bottom">
+    <section className='calculator-container'>
+      <div className='output-section'>{outputSection()}</div>
+      <div className='digits'>
+        {btns}
+
+        {/* Edit The Title */}
+        <h1>Let&apos;s do some math!</h1>
+      <div className="calculator-section">
+        <div className="output-section">{returnSection()}</div>
+        <div className="digits">
+          {buttons}
+        </div>
+        <span className="end">
+          <button type="button" className="buttons" value="0" onClick={() => { calculator(digitObj, '0'); }}>0</button>
+          <button type="button" className="buttons" value="." onClick={() => { calculator(digitObj, '.'); }}>.</button>
+          <button type="button" className="buttons operator-signs" value="=" onClick={() => { calculator(digitObj, '='); }}>=</button>
+        </span>
+        {/* End Edit Title */}
+      </div>
+      <span className='bottom'>
         <button
-          type="button"
-          className="buttons"
-          value="0"
+          type='button'
+          className='buttons'
+          value='0'
           onClick={() => {
             calculator(digitObj, '0');
           }}
@@ -91,9 +109,9 @@ const Calculator = () => {
           0
         </button>
         <button
-          type="button"
-          className="buttons"
-          value="."
+          type='button'
+          className='buttons'
+          value='.'
           onClick={() => {
             calculator(digitObj, '.');
           }}
@@ -101,9 +119,9 @@ const Calculator = () => {
           .
         </button>
         <button
-          type="button"
-          className="buttons operator-signs"
-          value="="
+          type='button'
+          className='buttons operator-signs'
+          value='='
           onClick={() => {
             calculator(digitObj, '=');
           }}
