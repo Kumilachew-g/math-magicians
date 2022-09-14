@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect homepage to match working snapshot 1`] = `
+<div>
+  <div
+    className="welcome-home"
+  >
+    <h1>
+      Welcome to Our Page
+    </h1>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, laborum, odio quis rerum fugiat reprehenderit numquam nisi aperiam non, ab blanditiis quisquam eum fugit dicta illo soluta facere iure mollitia?
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, laborum, odio quis rerum fugiat reprehenderit numquam nisi aperiam non, ab blanditiis quisquam eum fugit dicta illo soluta facere iure mollitia?
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, laborum, odio quis rerum fugiat reprehenderit numquam nisi aperiam non, ab blanditiis quisquam eum fugit dicta illo soluta facere iure mollitia?
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, laborum, odio quis rerum fugiat reprehenderit numquam nisi aperiam non, ab blanditiis quisquam eum fugit dicta illo soluta facere iure mollitia?
+    </p>
+  </div>
+  <div
+    id="tsparticles"
+  >
+    <canvas
+      style={
+        Object {
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
