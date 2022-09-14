@@ -1,15 +1,27 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent } from '@testing-library/react';
 
 import Calculator from '../components/Calculator';
 
-describe('Calculator page component', () => {
-  it('should return the sum of two number form UI', () => {
-    render(<Calculator />);
-    fireEvent.click(screen.getByText('3'));
-    fireEvent.click(screen.getByText('x'));
-    fireEvent.click(screen.getByText('7'));
-    fireEvent.click(screen.getByText('='));
-    expect(screen.getByText('21')).toBeTruthy();
+describe('Calculator', () => {
+  it('renders page correctly', () => {
+    const tree = renderer.create(<Calculator />);
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('displays result of 8.2 ÷ 2 = 4.1', () => {
+    const { getByText } = render(<Calculator />);
+
+    fireEvent.click(getByText('8'));
+    fireEvent.click(getByText('.'));
+    fireEvent.click(getByText('2'));
+    fireEvent.click(getByText('÷'));
+    fireEvent.click(getByText('2'));
+    fireEvent.click(getByText('='));
+
+    expect(getByText('4.1')).toBeInTheDocument();
   });
 });
