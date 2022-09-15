@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 /* eslint-disable */
-import Calculator from '../components/Calculator';
+import Calculator from '../components/calculator';
 
 describe('Calculator', () => {
   it('renders page correctly', () => {
