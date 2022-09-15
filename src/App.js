@@ -9,6 +9,7 @@ import NotMatch from './pages/NotMatch';
 import Navbar from './components/Navbar';
 
 const App = () => (
+  <React.StrictMode>
   <Router>
     <Navbar />
     <Switch>
@@ -26,6 +27,7 @@ const App = () => (
       </Route>
     </Switch>
   </Router>
+  </React.StrictMode>
 );
 
 export default App;
