@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect notmatch page to match working snapshot 1`] = `
+<div
+  className="no-match"
+>
+  <h3>
+    Whoops! Page not found!
+  </h3>
+  <img
+    alt="Not found"
+    src="notFound.jpg"
+  />
+</div>
+`;
