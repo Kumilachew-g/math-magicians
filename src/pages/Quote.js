@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from 'react-tsparticles';
+// import ParticlesComponent from 'react-particles-js';
 
 const Quote = () => (
   <div>
@@ -11,8 +11,6 @@ const Quote = () => (
         It is about understanding. — Shakuntala Devi.
       </h3>
     </div>
-    <Particles />
   </div>
 );
-
 export default Quote;

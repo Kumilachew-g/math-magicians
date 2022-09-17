@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from 'react-tsparticles';
+// import ParticlesComponent from 'react-particles-js';
 
 const Home = () => (
   <div>
@@ -26,7 +26,6 @@ const Home = () => (
         blanditiis quisquam eum fugit dicta illo soluta facere iure mollitia?
       </p>
     </div>
-    <Particles />
   </div>
 );
 
