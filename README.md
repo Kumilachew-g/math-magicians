@@ -13,7 +13,7 @@ In the project directory, you can run:
 
 ## Live Demo
 
-[Coming Soon!](https://kumilachew-g.github.io/Math-Magicians/)
+[Live Demo](https://sweet-phoenix-e95767.netlify.app/)
 
 ## Getting Started
 
