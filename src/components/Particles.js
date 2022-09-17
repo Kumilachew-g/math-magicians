@@ -1,8 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
-const ParticlesComponent = () => (
-  <Particles
+const Particles = () => (
+  <tsparticles
     id="react-particles-js"
     params={{
       particles: {
@@ -41,4 +41,4 @@ const ParticlesComponent = () => (
   />
 );
 
-export default ParticlesComponent;
+export default Particles;
